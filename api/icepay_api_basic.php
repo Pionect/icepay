@@ -3,10 +3,9 @@
 /**
  *  ICEPAY API
  *
- *  @version 2.3.0
- *  @author Olaf Abbenhuis
- *  @author Wouter van Tilburg
- *  @copyright Copyright (c) 2012, ICEPAY
+ *  @version 2.5.2
+ *  @author Dennis Geerdink
+ *  @copyright Copyright (c) 2015, ICEPAY
  *
  */
 // Define constants
@@ -416,7 +415,7 @@ class Icepay_Basicmode extends Icepay_Api_Base {
         }
 
         if (isset($this->data->ic_paymentmethod)) {
-            $this->_generatedURL = $this->postRequest($this->basicMode(), $this->prepareParameters());
+            $this->_generatedURL = $this->postRequest($this->basicMode(), $this->data);
         } else {
             $this->_generatedURL = sprintf("%s&%s", $this->basicMode(), $this->prepareParameters());
         }
