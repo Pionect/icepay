@@ -217,7 +217,7 @@ class Icepay_Webservice_Base extends Icepay_Api_Base {
      */
     protected function getIP()
     {
-        return isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '0.0.0.0';
+        return $_SERVER['REMOTE_ADDR'];
     }
 
     /**
@@ -697,21 +697,6 @@ class Icepay_Webservice_Filtering {
         }
         $this->_paymentMethodsArrayFiltered = $filteredArr;
         return $this;
-    }
-
-    /**
-     * Check if payment method is available.
-     *
-     * @param $pmCode
-     * @return bool
-     */
-    public function isPaymentMethodAvailable($pmCode) {
-        foreach ($this->_paymentMethodsArrayFiltered as $value) {
-            if ($value['PaymentMethodCode'] == $pmCode)
-                return true;
-        }
-
-        return false;
     }
 
     /**
