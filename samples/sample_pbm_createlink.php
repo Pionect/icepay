@@ -26,7 +26,7 @@ define('MERCHANTID', 'xxxxxx');
 define('SECRETCODE', 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
 
 // Include the API into your project
-require_once '../api/icepay_api_pbm.php';
+require_once '../src/icepay_api_pbm.php';
 
 try {
     /* Set the payment */
@@ -46,7 +46,7 @@ try {
 
     $result = $pbm->createLink($pbmObj);
     
-    if (true === $reesult->success) {
+    if (true === $result->success) {
         echo $result->url;
     } else {
         echo $result->errorCode . '<br />';
