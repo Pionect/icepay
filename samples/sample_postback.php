@@ -26,7 +26,7 @@ define('MERCHANTID', 12345);//<--- Change this into your own merchant ID
 define('SECRETCODE', "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");//<--- Change this into your own merchant ID
 define('EMAIL',"test@example.com");//<--- Change this into your own e-mail address
 
-require_once '../api/icepay_api_basic.php';
+require_once '../src/icepay_api_basic.php';
 
 /* Apply logging rules */
 $logger = Icepay_Api_Logger::getInstance();
@@ -40,8 +40,7 @@ $logger->enableLogging()
 /* Start the postback class */
 $icepay = new Icepay_Postback();
 $icepay->setMerchantID(MERCHANTID)
-        ->setSecretCode(SECRETCODE)
-        ->doIPCheck(); // We encourage to enable ip checking for your own security
+        ->setSecretCode(SECRETCODE);
 
 $order  = new Example_Order(); // This is a dummy class to depict a sample usage.
 

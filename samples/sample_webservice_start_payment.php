@@ -21,12 +21,12 @@
  *
  */
 
-/*  Define your ICEPAY Merchant ID and Secret code. The values below are sample values and will not work, Change them to your own merchant settings. */
-define('MERCHANTID',12345);//<--- Change this into your own merchant ID
-define('SECRETCODE',"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");//<--- Change this into your own merchant ID
+// Define your ICEPAY Merchant ID and Secret code. The values below are sample values and will not work, Change them to your own merchant settings.
+define('MERCHANTID', 'xxxxxx');
+define('SECRETCODE', 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
 
 // Include the API into your project
-require_once '../api/icepay_api_webservice.php';
+require_once '../src/icepay_api_webservice.php';
 
 
 /* Set the payment */
@@ -37,7 +37,7 @@ $paymentObj->setCountry('NL')
             ->setAmount(300)
             ->setPaymentMethod("IDEAL")
             ->setIssuer("ING")
-            ->setOrderID(1);
+            ->setOrderID($orderid);
 
 try {
     // Set the service
