@@ -10,7 +10,7 @@
 		"source": "https://github.com/icepay/icepay"
 	},
 	"autoload": {
-		"classmap": ["src/"]
+		"classmap": ["api/"]
 	},
 	"require": {
 		"php": ">=5.2.4"
